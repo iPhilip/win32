@@ -59,13 +59,6 @@ If the function fails, the return value is zero.
 
 
 
-| Value                       | Meaning                                                                                                                        |
-|-----------------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| ERROR\_INSUFFICIENT\_BUFFER | The *pszBuffer* buffer is too small. The variable pointed to by *pcchBuffer* contains the required buffer size, in characters. |
-| ERROR\_FILE\_NOT\_FOUND     | There is no default printer.                                                                                                   |
-
-
-
  
 
 ## Remarks
