@@ -3,10 +3,13 @@ description: Alphabetical List of DirectShow Interfaces
 ms.assetid: 9c7f56f4-92af-40c6-8124-f2715ac3f6d7
 title: Alphabetical List of DirectShow Interfaces
 ms.topic: article
-ms.date: 05/31/2018
+ms.date: 4/26/2023
+ms.custom: UpdateFrequency5
 ---
 
 # Alphabetical List of DirectShow Interfaces
+
+\[The feature associated with this page, [DirectShow](/windows/win32/directshow/directshow), is a legacy feature. It has been superseded by [MediaPlayer](/uwp/api/Windows.Media.Playback.MediaPlayer), [IMFMediaEngine](/windows/win32/api/mfmediaengine/nn-mfmediaengine-imfmediaengine), and [Audio/Video Capture in Media Foundation](/windows/win32/medfound/audio-video-capture-in-media-foundation). Those features have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use **MediaPlayer**, **IMFMediaEngine** and **Audio/Video Capture in Media Foundation** instead of **DirectShow**, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.\]
 
 The following is an alphabetical list of DirectShow interfaces.
 
@@ -123,7 +126,7 @@ The following is an alphabetical list of DirectShow interfaces.
 | <a href="/previous-versions/windows/desktop/api/vidcap/nn-vidcap-iksnodecontrol"><strong>IKsNodeControl</strong></a> | Exposed by USB Video Class (UVC) extension units. | 
 | <a href="ikspin.md"><strong>IKsPin</strong></a> | Retrieves the mediums supported by a kernel-mode pin. | 
 | <a href="ikspropertyset.md"><strong>IKsPropertySet</strong></a> | Sets properties on a kernel-mode filter. | 
-| <a href="/previous-versions/windows/desktop/api/vidcap/nn-vidcap-ikstopologyinfo"><strong>IKsTopologyInfo</strong></a> | Enumerates the nodes in a stream class driver. | 
+| <a href="/windows/win32/api/vidcap/nn-vidcap-ikstopologyinfo"><strong>IKsTopologyInfo</strong></a> | Enumerates the nodes in a stream class driver. | 
 | <a href="/windows/desktop/api/Control/nn-control-imediacontrol"><strong>IMediaControl</strong></a> | Controls the flow of data through the filter graph. | 
 | <a href="/windows/desktop/api/Control/nn-control-imediaevent"><strong>IMediaEvent</strong></a> | Retrieves event notifications from the filter graph. | 
 | <a href="/windows/desktop/api/Control/nn-control-imediaeventex"><strong>IMediaEventEx</strong></a> | Extends the <a href="/windows/desktop/api/Control/nn-control-imediaevent"><strong>IMediaEvent</strong></a> interface. | 

@@ -664,7 +664,7 @@ Transparency=1
 
 ## Installing Theme Files
 
-When Windows is initialized, the operating system enumerates the first-level subdirectories of %WinDir%\\Resources\\ to identify available themes. The system default theme files are located in %WinDir%\\Resources\\Themes. The user theme files are stored in %WinDir%\\Users\\&lt;username&gt;\\AppData\\Local\\Microsoft\\Windows\\Themes.
+When Windows is initialized, the operating system enumerates the first-level subdirectories of %WinDir%\\Resources\\ to identify available themes. The system default theme files are located in %WinDir%\\Resources\\Themes. The user theme files are stored in %LOCALAPPDATA%\\Microsoft\\Windows\\Themes (or %SystemDrive%\\Users\\&lt;username&gt;\\AppData\\Local\\Microsoft\\Windows\\Themes).
 
 A .theme file has file associations; therefore, theme installer applications can call [**ShellExecute**](/windows/desktop/api/shellapi/nf-shellapi-shellexecutea) on a .theme file to open the **Personalization** window in Control Panel to the specified theme.
 
@@ -673,8 +673,6 @@ A .theme file has file associations; therefore, theme installer applications can
 **Windows 7 and later.** A theme pack is a .cab file that contains not only the .theme file but also the files needed to implement the theme on another computer, such as sound files and images. Users can create theme packs through the Personalization Control Panel.
 
 Supported file types include the following:
-
-
 
 | File type    | Extension                           |
 |--------------|-------------------------------------|
@@ -685,9 +683,20 @@ Supported file types include the following:
 | Desktop icon | .ico                                |
 | Brand logo   | .png                                |
 
+Assets like sounds should be placed at the root of the .cab and referenced in .theme files directly. For example, if you have a file called `Alert.wav` in the root of your .cab, you can use it in your sound scheme:
 
+```ini
+[AppEvents\Schemes\Apps\.Default\SystemAsterisk]
+DefaultValue=Alert.wav
+```
 
- 
+Wallpaper images should be handled differently. They should extract to a `DesktopBackground\` folder and be referenced in .theme files by that subdirectory. For example, if you have a wallpaper called `BestDesktop.jpg`, ensure it extracts to `DesktopBackground\`, and reference it in your .cab like this:
+
+```
+[Control Panel\Desktop]
+; Note the extra `DesktopBackground\` directory.
+Wallpaper=DesktopBackground\BestDesktop.jpg
+```
 
 ## Related topics
 
