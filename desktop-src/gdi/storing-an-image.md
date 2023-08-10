@@ -145,7 +145,7 @@ void CreateBMPFile(HWND hwnd, LPTSTR pszFile, PBITMAPINFO pbi,
 
     // Copy the BITMAPINFOHEADER and RGBQUAD array into the file.  
     if (!WriteFile(hf, (LPVOID) pbih, sizeof(BITMAPINFOHEADER) 
-                  + pbih->biClrUsed * sizeof (RGBQUAD), 
+                  + pbih->biClrUsed * sizeof(RGBQUAD), 
                   (LPDWORD) &dwTmp, ( NULL)))
         errhandler("WriteFile", hwnd); 
 
